@@ -442,9 +442,5 @@ $(document).ready(function() {
                 config.EventsBus.eventBusPut(config.misreadings);
             });
             config.eventManager.on('transportDo', config.transport.transportHandler);
-        }); // on drop ending line
-
-    $( document ).ajaxError(function() {
-
-    });
+        });
 });
