@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="xlsStyles.css">
+<script lang="javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script lang="javascript" src="shim.js"></script>
+<script lang="javascript" src="ExcelToJsDate.js"></script>
+<script lang="javascript" src="jszip.js"></script>
+<script lang="javascript" src="xlsx.js"></script>
+<script lang="javascript" src="ods.js"></script>
+<script lang="javascript" src="FileSaver.js"></script>
+<script lang="javascript" src="xls_worker.js"></script>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="draganddropitemsid">Drag and Drop your .xls file here:<br/>
+				<ul>
+					<li>Last file to drop should be the most recently updated file!</li>
+					<li>1-st file to drop should be the most obsolete file!</li>
+					<li>Be sure to replace all empty cells in both .xls files with Undefined!</li>
+					<li>Be sure to replace all 'False' cells with _False consistently in both files!</li>
+					<li>All cells with value of '0' should be replaced with the word 'zero'!</li>
+					<li><span style="color: red;">Note: we cannot change the name of the project!</span></li>
+					<li><span style="color: red;">Note: we cannot change the date of Issue Creation or Issue update!</span></li>					
+				</ul>
+		</div>
+		<div id="results">
+
+		</div>
+</body>
+</html>
