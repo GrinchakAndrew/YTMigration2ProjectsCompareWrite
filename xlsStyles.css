@@ -1,9 +1,6 @@
-
-#draganddropitemsid{
+#draganddropitemsid {
 	min-width: 600px;
 	max-width: 600px;
-    min-height: 70px;
-	max-height: 70px;
 	border-right: 1px solid #aaaaaa;
 	border-top: 1px solid #aaaaaa;
 	border-bottom: 1px solid #aaaaaa;
@@ -24,91 +21,10 @@ li {
 	min-width: 600px;
 }
 
-#draganddropfiletoprocess {
-	min-width: 87%;
-	max-width: 87%;
-    min-height: 100px;
-	border-right: 1px solid #aaaaaa;
-	border-top: 1px solid #aaaaaa;
-	border-bottom: 1px solid #aaaaaa;
-	border-left: 1px solid #aaaaaa;
-	text-align: center;
-	font-family: monospace;
-	margin: 0 auto;
-}
-
-.shim {
-	padding : 10px;
-}
-
-#textarea > div {
-	width: 95%;
-	margin: 0 auto;
-}
-
-#textarea {
-	min-width: 87%;
-	max-width: 87%;
-	border-top: 1px solid #aaa;
-	border-right: 1px solid #aaa;
-	border-left: 1px solid #aaa;
-	border-bottom: 1px solid #aaa;
-	font-family: monospace;
-	margin: 0 auto;
-}
-
 .success{
 	background-color : #58FAAC;
 }
 
 .failure{
 	background-color : #b92b27;
-}
-
-textarea.what{
-	width : 75%;
-}
-
-textarea.write_auxiliary_array {
-		width : 75%;
-}
-
-textarea{
-	display: inline;
-	margin-top:2%;	
-	height: 65px;
-}
-
-textarea.write_what_where{
-	width: 75%;
-}
-
-#process_wb{
-	margin-right: 4px;
-}
-
-.table-preview {
-	border: 1px solid #aaaaaa;
-	min-width: 87%;
-	max-width: 87%;
-    min-height: 700px;
-	max-height: 700px;
-	overflow-x: scroll;
-	overflow-y: scroll;
-	margin: 0 auto;
-}
-
-.table-preview thead td[row] {
-	font-weight: bold;
-	cursor:cell;
-}
-
-.table-preview table {
-	border: 1px solid #aaa;
-    border-collapse: collapse;
-}
-.table-preview td, th {
-	font-size: 10px;
-	border: 1px solid #aaa;
-    border-collapse: collapse;
 }
