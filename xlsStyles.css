@@ -13,6 +13,10 @@
 	margin: 0 auto;
 }
 
+li {
+	text-align: left;
+	list-style-type: square;
+}
 #results{
 	border: 1px solid #ccc;
 	margin: 5px auto;
@@ -23,8 +27,7 @@
 #draganddropfiletoprocess {
 	min-width: 87%;
 	max-width: 87%;
-    min-height: 70px;
-	max-height: 70px;
+    min-height: 100px;
 	border-right: 1px solid #aaaaaa;
 	border-top: 1px solid #aaaaaa;
 	border-bottom: 1px solid #aaaaaa;
