@@ -1,4 +1,14 @@
 var config = {
+    JSDateToExcelDate : function (JsDate) {
+    return (JsDate / 86400000 + 25567 + 2);
+    },
+    JSDateFromExcel : function (excelDate) {
+    // JavaScript dates can be constructed by passing milliseconds
+    // since the Unix epoch (January 1, 1970) example: new Date(12312512312);
+    // 1. Subtract number of days between Jan 1, 1900 and Jan 1, 1970, plus 1 (Google "excel leap year bug")
+    // 2. Convert to milliseconds.
+    return new Date((excelDate - (25567 + 2))*86400*1000);
+    },
     transport: new(function() {
         var host = 'https://youtrack.oraclecorp.com/rest';
         this.getIssue = function(issue_id) {
@@ -289,7 +299,7 @@ var config = {
                     var isCreated = column == 'Created';
                     var isProject = column == 'Project'
                     var isNotUndefined = mostRecentFileData2Compare !== 'Undefined' && mostObsoleteFileData2Compare !== 'Undefined';
-
+                    var isDateColumn = column.indexOf('Date') !== -1;
                     // check if ids match
                     if (isIssueId && isDataDifferent) {
                         $.error("Inconsistency in Ids between files: data structure error!");
@@ -299,7 +309,21 @@ var config = {
                         if (!config['misreadings'][id1]) {
                             config['misreadings'][id1] = {};
                         }
+                        if(isDateColumn) {
+                            debugger;
+                            mostRecentFileData2Compare = config.JSDateFromExcel(mostRecentFileData2Compare);
+                            var dateArr = [];
+                            var year = new Date(mostRecentFileData2Compare).getFullYear();
+                            var month = new Date(mostRecentFileData2Compare).getMonth();
+                            var date = new Date(mostRecentFileData2Compare).getDate();
+                            if(month.toString().length == 1 && month.toString().match(/[1-9]/) && !month.toString().match(/[0]/)){
+                                month = '0' + month;
+                            }
+                            dateArr.push(year, month, date);
+                            mostRecentFileData2Compare = dateArr.join("-");
+                        }
                         config['misreadings'][id1][column] = mostRecentFileData2Compare;
+                        console.log(id1, column, mostRecentFileData2Compare);
                     }
                 }
             }
